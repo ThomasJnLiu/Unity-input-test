@@ -11,6 +11,7 @@ public class PlayerController : MonoBehaviour
         controls.Enable();
 
         controls.Player.Button.performed += Fire;
+        controls.Player.Movement.performed += Move;
     }
     // Start is called before the first frame update
     void Start()
@@ -26,5 +27,9 @@ public class PlayerController : MonoBehaviour
 
     public void Fire(InputAction.CallbackContext context){
         Debug.Log("test");
+    }
+
+    public void Move(InputAction.CallbackContext context){
+        Debug.Log(context.ReadValue<Vector2>());
     }
 }
